@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Upper Tweaks Login</title>
+  <style>
+    body {
+      background-color: #0e0e0e;
+      color: #00ff99;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #00ff99;
+      color: #000;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Upper Tweaks</h1>
+  <p>Powered by Upper Devs</p>
+  <input type="text" placeholder="Seu nome" id="nome" />
+  <input type="text" placeholder="Sua key" id="key" />
+  <button onclick="verificar()">Entrar</button>
+
+  <script>
+    const keysValidas = ["UPPER-TWKS-2024", "UPPER-DEV-TST-01", "UPPER123"];
+
+    function verificar() {
+      const nome = document.getElementById("nome").value;
+      const key = document.getElementById("key").value;
+      if (keysValidas.includes(key)) {
+        localStorage.setItem("nome", nome);
+        window.location.href = "painel.html";
+      } else {
+        alert("Key inválida!");
+      }
+    }
+  </script>
+</body>
+</html>
